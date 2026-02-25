@@ -4,13 +4,13 @@ provider "azurerm" {
  
 resource "azurerm_resource_group" "example" {
   name     = "rg-hcp-terraform-test"
-  location = "East US"
+  location = "Central India"
 }
 
 resource "azurerm_virtual_network" "vnet" {
   name                = "vnet-demo"
   address_space       = ["10.0.0.0/16"]
-  location            = "East US"
+  location            = "Central India"
   resource_group_name = azurerm_resource_group.example.name
 }
  
@@ -25,7 +25,7 @@ resource "azurerm_network_interface" "nic" {
 depends_on = [azurerm_network_interface.nic]
 
   name                = "nic-demo"
-  location            = "East US"
+  location            = "Central India"
   resource_group_name = azurerm_resource_group.example.name
  
   ip_configuration {
@@ -38,7 +38,7 @@ depends_on = [azurerm_network_interface.nic]
 resource "azurerm_linux_virtual_machine" "vm" {
   name                = "vm-demo"
   resource_group_name = azurerm_resource_group.example.name
-  location            = "East US"
+  location            = "Central India"
   size                = "Standard_DS1_v2"
   admin_username      = "azureuser"
  
