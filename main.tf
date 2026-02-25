@@ -36,7 +36,7 @@ resource "azurerm_network_interface" "nic" {
 resource "azurerm_linux_virtual_machine" "vm" {
   name                = "vm-demo"
   resource_group_name = azurerm_resource_group.example.name
-  location            = "East US"
+  location            = "Central US"
   size                = "Standard_B1s"
   admin_username      = "azureuser"
  
