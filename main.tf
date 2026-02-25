@@ -39,7 +39,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "vm-demo"
   resource_group_name = azurerm_resource_group.example.name
   location            = "Central India"
-  size                = "Standard_DS1_v2"
+  size                = "Standard_B1s"
   admin_username      = "azureuser"
  
   network_interface_ids = [
