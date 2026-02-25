@@ -22,6 +22,8 @@ resource "azurerm_subnet" "subnet" {
 }
  
 resource "azurerm_network_interface" "nic" {
+depends_on = [azurerm_network_interface.nic]
+
   name                = "nic-demo"
   location            = "East US"
   resource_group_name = azurerm_resource_group.example.name
@@ -36,7 +38,7 @@ resource "azurerm_network_interface" "nic" {
 resource "azurerm_linux_virtual_machine" "vm" {
   name                = "vm-demo"
   resource_group_name = azurerm_resource_group.example.name
-  location            = "Central US"
+  location            = "East US"
   size                = "Standard_B1s"
   admin_username      = "azureuser"
  
